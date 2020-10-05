@@ -23,7 +23,6 @@ Partial Class frmViewTotal
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmViewTotal))
         Me.dgvFoodOrder = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -31,14 +30,11 @@ Partial Class frmViewTotal
         Me.btnConfirm = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.mnuBack = New System.Windows.Forms.ToolStripMenuItem()
-        Me.dgvDrinkOrder = New System.Windows.Forms.DataGridView()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtCustomerID = New System.Windows.Forms.TextBox()
+        Me.txtMemberPhone = New System.Windows.Forms.TextBox()
         CType(Me.dgvFoodOrder, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.dgvDrinkOrder, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgvFoodOrder
@@ -62,7 +58,7 @@ Partial Class frmViewTotal
         Me.dgvFoodOrder.RowTemplate.Height = 28
         Me.dgvFoodOrder.ShowCellToolTips = False
         Me.dgvFoodOrder.ShowEditingIcon = False
-        Me.dgvFoodOrder.Size = New System.Drawing.Size(387, 163)
+        Me.dgvFoodOrder.Size = New System.Drawing.Size(760, 408)
         Me.dgvFoodOrder.TabIndex = 1
         '
         'Label1
@@ -88,7 +84,7 @@ Partial Class frmViewTotal
         'btnConfirm
         '
         Me.btnConfirm.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnConfirm.Font = New System.Drawing.Font("STCaiyun", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.btnConfirm.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.btnConfirm.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnConfirm.Location = New System.Drawing.Point(318, 596)
         Me.btnConfirm.Name = "btnConfirm"
@@ -101,11 +97,12 @@ Partial Class frmViewTotal
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.Black
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuStrip1.GripMargin = New System.Windows.Forms.Padding(2, 2, 0, 2)
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuBack})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(481, 40)
+        Me.MenuStrip1.Size = New System.Drawing.Size(884, 42)
         Me.MenuStrip1.TabIndex = 5
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -114,32 +111,8 @@ Partial Class frmViewTotal
         Me.mnuBack.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.mnuBack.ForeColor = System.Drawing.Color.White
         Me.mnuBack.Name = "mnuBack"
-        Me.mnuBack.Size = New System.Drawing.Size(44, 36)
+        Me.mnuBack.Size = New System.Drawing.Size(48, 38)
         Me.mnuBack.Text = "<"
-        '
-        'dgvDrinkOrder
-        '
-        Me.dgvDrinkOrder.AllowUserToAddRows = False
-        Me.dgvDrinkOrder.AllowUserToDeleteRows = False
-        Me.dgvDrinkOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgvDrinkOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvDrinkOrder.Location = New System.Drawing.Point(34, 382)
-        Me.dgvDrinkOrder.Name = "dgvDrinkOrder"
-        Me.dgvDrinkOrder.ReadOnly = True
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvDrinkOrder.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvDrinkOrder.RowHeadersWidth = 62
-        Me.dgvDrinkOrder.RowTemplate.Height = 28
-        Me.dgvDrinkOrder.ShowCellToolTips = False
-        Me.dgvDrinkOrder.ShowEditingIcon = False
-        Me.dgvDrinkOrder.Size = New System.Drawing.Size(387, 163)
-        Me.dgvDrinkOrder.TabIndex = 6
         '
         'Label2
         '
@@ -148,20 +121,9 @@ Partial Class frmViewTotal
         Me.Label2.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(39, 104)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(63, 30)
+        Me.Label2.Size = New System.Drawing.Size(75, 30)
         Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Food"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(39, 336)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(70, 30)
-        Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Drink"
+        Me.Label2.Text = "Items"
         '
         'Label4
         '
@@ -170,17 +132,17 @@ Partial Class frmViewTotal
         Me.Label4.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(29, 58)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(158, 30)
+        Me.Label4.Size = New System.Drawing.Size(176, 30)
         Me.Label4.TabIndex = 9
-        Me.Label4.Text = "Customer ID: "
+        Me.Label4.Text = "Member Phone: "
         '
-        'txtCustomerID
+        'txtMemberPhone
         '
-        Me.txtCustomerID.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCustomerID.Location = New System.Drawing.Point(193, 59)
-        Me.txtCustomerID.Name = "txtCustomerID"
-        Me.txtCustomerID.Size = New System.Drawing.Size(254, 32)
-        Me.txtCustomerID.TabIndex = 10
+        Me.txtMemberPhone.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMemberPhone.Location = New System.Drawing.Point(238, 58)
+        Me.txtMemberPhone.Name = "txtMemberPhone"
+        Me.txtMemberPhone.Size = New System.Drawing.Size(254, 32)
+        Me.txtMemberPhone.TabIndex = 10
         '
         'frmViewTotal
         '
@@ -188,12 +150,10 @@ Partial Class frmViewTotal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LemonChiffon
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(481, 641)
-        Me.Controls.Add(Me.txtCustomerID)
+        Me.ClientSize = New System.Drawing.Size(884, 641)
+        Me.Controls.Add(Me.txtMemberPhone)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.dgvDrinkOrder)
         Me.Controls.Add(Me.btnConfirm)
         Me.Controls.Add(Me.txtTotal)
         Me.Controls.Add(Me.Label1)
@@ -210,7 +170,6 @@ Partial Class frmViewTotal
         CType(Me.dgvFoodOrder, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.dgvDrinkOrder, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -221,9 +180,7 @@ Partial Class frmViewTotal
     Friend WithEvents btnConfirm As Button
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents mnuBack As ToolStripMenuItem
-    Friend WithEvents dgvDrinkOrder As DataGridView
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents txtCustomerID As TextBox
+    Friend WithEvents txtMemberPhone As TextBox
 End Class

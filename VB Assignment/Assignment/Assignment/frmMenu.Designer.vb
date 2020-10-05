@@ -60,6 +60,8 @@ Partial Class frmMenu
         Me.imgLemonade = New System.Windows.Forms.PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblDrinkName1 = New System.Windows.Forms.Label()
+        Me.lblOrderNum = New System.Windows.Forms.Label()
+        Me.lblEmpId = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.gpbFood.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -486,6 +488,26 @@ Partial Class frmMenu
         Me.lblDrinkName1.TabIndex = 1
         Me.lblDrinkName1.Text = "Lemonade - RM 2"
         '
+        'lblOrderNum
+        '
+        Me.lblOrderNum.AutoSize = True
+        Me.lblOrderNum.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOrderNum.Location = New System.Drawing.Point(444, 355)
+        Me.lblOrderNum.Name = "lblOrderNum"
+        Me.lblOrderNum.Size = New System.Drawing.Size(26, 29)
+        Me.lblOrderNum.TabIndex = 5
+        Me.lblOrderNum.Text = "1"
+        '
+        'lblEmpId
+        '
+        Me.lblEmpId.AutoSize = True
+        Me.lblEmpId.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEmpId.Location = New System.Drawing.Point(444, 440)
+        Me.lblEmpId.Name = "lblEmpId"
+        Me.lblEmpId.Size = New System.Drawing.Size(26, 29)
+        Me.lblEmpId.TabIndex = 6
+        Me.lblEmpId.Text = "1"
+        '
         'frmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
@@ -493,7 +515,9 @@ Partial Class frmMenu
         Me.BackColor = System.Drawing.Color.LemonChiffon
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(914, 660)
+        Me.ClientSize = New System.Drawing.Size(914, 780)
+        Me.Controls.Add(Me.lblEmpId)
+        Me.Controls.Add(Me.lblOrderNum)
         Me.Controls.Add(Me.gpbDrink)
         Me.Controls.Add(Me.gpbFood)
         Me.Controls.Add(Me.MenuStrip1)
@@ -574,4 +598,6 @@ Partial Class frmMenu
     Friend WithEvents nudLemonade As NumericUpDown
     Friend WithEvents Label4 As Label
     Friend WithEvents mnuCart As ToolStripMenuItem
+    Friend WithEvents lblOrderNum As Label
+    Friend WithEvents lblEmpId As Label
 End Class

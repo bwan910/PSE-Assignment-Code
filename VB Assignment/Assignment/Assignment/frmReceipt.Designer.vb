@@ -35,13 +35,11 @@ Partial Class frmReceipt
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.dgvDrinkOrder = New System.Windows.Forms.DataGridView()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.cmnuPrint = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
         CType(Me.dgvFoodOrder, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvDrinkOrder, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -87,7 +85,7 @@ Partial Class frmReceipt
         Me.dgvFoodOrder.RowTemplate.Height = 28
         Me.dgvFoodOrder.ShowCellToolTips = False
         Me.dgvFoodOrder.ShowEditingIcon = False
-        Me.dgvFoodOrder.Size = New System.Drawing.Size(402, 146)
+        Me.dgvFoodOrder.Size = New System.Drawing.Size(753, 330)
         Me.dgvFoodOrder.TabIndex = 29
         '
         'lblOrderId
@@ -190,18 +188,6 @@ Partial Class frmReceipt
         Me.Label1.TabIndex = 19
         Me.Label1.Text = "                   Total : "
         '
-        'dgvDrinkOrder
-        '
-        Me.dgvDrinkOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgvDrinkOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvDrinkOrder.Location = New System.Drawing.Point(81, 253)
-        Me.dgvDrinkOrder.Margin = New System.Windows.Forms.Padding(4)
-        Me.dgvDrinkOrder.Name = "dgvDrinkOrder"
-        Me.dgvDrinkOrder.RowHeadersWidth = 62
-        Me.dgvDrinkOrder.RowTemplate.Height = 28
-        Me.dgvDrinkOrder.Size = New System.Drawing.Size(402, 146)
-        Me.dgvDrinkOrder.TabIndex = 18
-        '
         'ContextMenuStrip1
         '
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
@@ -233,7 +219,7 @@ Partial Class frmReceipt
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LemonChiffon
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(550, 594)
+        Me.ClientSize = New System.Drawing.Size(925, 594)
         Me.Controls.Add(Me.lblAmount)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.dgvFoodOrder)
@@ -245,7 +231,6 @@ Partial Class frmReceipt
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.dgvDrinkOrder)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -253,7 +238,6 @@ Partial Class frmReceipt
         Me.Name = "frmReceipt"
         Me.Text = "Receipt"
         CType(Me.dgvFoodOrder, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvDrinkOrder, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -271,7 +255,6 @@ Partial Class frmReceipt
     Friend WithEvents Label5 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents dgvDrinkOrder As DataGridView
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents PrintForm1 As PowerPacks.Printing.PrintForm
     Friend WithEvents PrintDialog1 As PrintDialog

@@ -2,7 +2,39 @@
 Imports System.Data
 
 Public Class frmViewTotal
+
+    Dim memberid As Integer
+
+    Private Sub loadmember()
+        'Reference: https://www.daniweb.com/programming/software-development/threads/388157/passing-value-from-database-to-a-variable#post1671970
+
+        Dim sqlCnn As SqlConnection
+        Dim strCnn As String = "Data Source=BRANDON\SQLEXPRESS;Initial Catalog=OrderSystem;Integrated Security=True"
+        sqlCnn = New SqlConnection(strCnn)
+        sqlCnn.Open()
+        Dim ds As SqlDataReader
+        'The query is to take the Max a.k.a the latest ordernum and put it in a "table" with the column name "Latest"
+        Dim comm As New SqlCommand("SELECT member_id AS MEMBERID From Member Where member_phone = '" & txtMemberPhone.Text & "'", sqlCnn)
+
+        '' If ur using Sp then Commandtype= CommandType.StoredProcedure if it is Text then comm.CommandType=CommandType.Text
+        comm.CommandType = CommandType.Text
+
+        ds = comm.ExecuteReader
+        If ds.HasRows Then
+            While ds.Read
+                'This will pass the item in the "Latest" column into the variable latestOrder
+                memberid = ds.Item("MEMBERID")
+
+            End While
+        Else
+            memberid = 0
+        End If
+
+        sqlCnn.Close()
+    End Sub
+
     Private Sub BtnPay_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
+        loadmember()
 
         Dim strConnectionString As String
         Dim sqlCnn As SqlConnection
@@ -15,14 +47,18 @@ Public Class frmViewTotal
 
 
         sqlCnn = New SqlConnection(strConnectionString)
-        strSql = "UPDATE FoodOrder SET CustomerID = '" & txtCustomerID.Text & "' WHERE OrderID = 100; UPDATE DrinkOrder SET CustomerID = '" & txtCustomerID.Text & "' WHERE OrderID = 100"
+        strSql = "UPDATE Ordering SET member_id = '" & memberid & "' WHERE order_num = '" & frmMenu.orderNum & "';"
         sqlCnn.Open()
         sqlCmd = New SqlCommand(strSql, sqlCnn)
         sqlCmd.ExecuteNonQuery()
         sqlCmd.Dispose()
         sqlCnn.Close()
 
-        CheckMember()
+        If memberid = 0 Then
+            frmReceipt.Show()
+        Else
+            frmMemberReceipt.Show()
+        End If
 
     End Sub
 
@@ -35,14 +71,13 @@ Public Class frmViewTotal
 
     Private Sub FrmViewTotal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        LoadFoodOrder()
-        LoadDrinkOrder()
+        LoadItems()
         CalculateTotal()
 
     End Sub
 
 
-    Private Sub LoadFoodOrder()
+    Private Sub LoadItems()
 
         Dim strConnectionString As String
         Dim sqlCnn As SqlConnection
@@ -57,52 +92,22 @@ Public Class frmViewTotal
         sqlCnn = New SqlConnection(strConnectionString)
 
         sqlCnn.Open()
-        adapter = New SqlDataAdapter("SELECT FoodOrder.FoodID,Food.FoodName,FoodOrder.Quantity,FoodOrder.totalFood
-FROM FoodOrder
-JOIN Food ON FoodOrder.FoodID = Food.FoodID
-WHERE OrderID = 100", sqlCnn)
+        adapter = New SqlDataAdapter("SELECT Menu.item_id,Menu.item_name,Ordering.quantity,Ordering.total_price
+FROM Ordering 
+JOIN Menu ON Ordering.item_id = Menu.item_id
+WHERE order_num = '" & frmMenu.orderNum & "' ", sqlCnn)
         MyCmdBld = New SqlCommandBuilder(adapter)
         FoodOrderTable = New DataTable
         adapter.Fill(FoodOrderTable)
         dgvFoodOrder.DataSource = FoodOrderTable
-        dgvFoodOrder.Columns(0).HeaderText = "FoodID"
-        dgvFoodOrder.Columns(1).HeaderText = "Name"
+        dgvFoodOrder.Columns(0).HeaderText = "Item ID"
+        dgvFoodOrder.Columns(1).HeaderText = "Item Name"
         dgvFoodOrder.Columns(2).HeaderText = "Quantity"
         dgvFoodOrder.Columns(3).HeaderText = "Total Price"
         sqlCnn.Close()
 
     End Sub
 
-    Private Sub LoadDrinkOrder()
-
-        Dim strConnectionString As String
-        Dim sqlCnn As SqlConnection
-        Dim adapter As New SqlDataAdapter
-        Dim MyCmdBld As New SqlCommandBuilder
-        Dim ds As New DataSet
-        Dim DrinkOrderTable As New DataTable
-
-        strConnectionString = "Data Source=BRANDON\SQLEXPRESS;Initial Catalog=OrderSystem;Integrated Security=True"
-
-
-        sqlCnn = New SqlConnection(strConnectionString)
-
-        sqlCnn.Open()
-        adapter = New SqlDataAdapter("SELECT DrinkOrder.DrinkID,Drink.DrinkName,DrinkOrder.Quantity,DrinkOrder.totalDrink
-FROM DrinkOrder
-JOIN Drink ON DrinkOrder.DrinkID = Drink.DrinkID
-WHERE OrderID = 100", sqlCnn)
-        MyCmdBld = New SqlCommandBuilder(adapter)
-        DrinkOrderTable = New DataTable
-        adapter.Fill(DrinkOrderTable)
-        dgvDrinkOrder.DataSource = DrinkOrderTable
-        dgvDrinkOrder.Columns(0).HeaderText = "DrinkID"
-        dgvDrinkOrder.Columns(1).HeaderText = "Name"
-        dgvDrinkOrder.Columns(2).HeaderText = "Quantity"
-        dgvDrinkOrder.Columns(3).HeaderText = "Total Price"
-        sqlCnn.Close()
-
-    End Sub
 
     Private Sub CalculateTotal()
         Dim totalFood As Integer = 0
@@ -113,41 +118,38 @@ WHERE OrderID = 100", sqlCnn)
             totalFood = totalFood + dgvFoodOrder.Rows(i).Cells(3).Value
         Next
 
-        For i As Integer = 0 To dgvDrinkOrder.Rows.Count() - 1 Step +1
-            totalDrink = totalDrink + dgvDrinkOrder.Rows(i).Cells(3).Value
-        Next
-
         total = totalDrink + totalFood
         txtTotal.Text = total.ToString("C")
 
     End Sub
 
-    Private Sub CheckMember()
-        Dim strConnectionString As String
-        Dim sqlCnn As SqlConnection
-        strConnectionString = "Data Source=BRANDON\SQLEXPRESS;Initial Catalog=OrderSystem;Integrated Security=True"
+    'Private Sub CheckMember()
+    '    Dim strConnectionString As String
+    '    Dim sqlCnn As SqlConnection
+    '    strConnectionString = "Data Source=BRANDON\SQLEXPRESS;Initial Catalog=OrderSystem;Integrated Security=True"
 
 
-        sqlCnn = New SqlConnection(strConnectionString)
+    '    sqlCnn = New SqlConnection(strConnectionString)
 
-        Dim sqlCmd As New SqlCommand("SELECT MemberID FROM Customer WHERE CustomerID = @CustomerID", sqlCnn)
-        sqlCmd.Parameters.Add("@CustomerID", SqlDbType.VarChar).Value = txtCustomerID.Text
-
-
-        Dim adapter As New SqlDataAdapter(sqlCmd)
-        Dim dt As New DataTable()
-        adapter.Fill(dt)
+    '    Dim sqlCmd As New SqlCommand("SELECT MemberID FROM Customer WHERE CustomerID = @CustomerID", sqlCnn)
+    '    sqlCmd.Parameters.Add("@CustomerID", SqlDbType.VarChar).Value = txtMemberPhone.Text
 
 
-        If dt.Rows(0).IsNull(0) = False Then
-            frmMemberReceipt.Show()
-            Me.Close()
-        Else
-            frmReceipt.Show()
-            Me.Close()
-        End If
+    '    Dim adapter As New SqlDataAdapter(sqlCmd)
+    '    Dim dt As New DataTable()
+    '    adapter.Fill(dt)
 
 
-    End Sub
+    '    If dt.Rows(0).IsNull(0) = False Then
+    '        frmMemberReceipt.Show()
+    '        Me.Close()
+    '    Else
+    '        frmReceipt.Show()
+    '        Me.Close()
+    '    End If
+
+
+    'End Sub
+
 
 End Class
