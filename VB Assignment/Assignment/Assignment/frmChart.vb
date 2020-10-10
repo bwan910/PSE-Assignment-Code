@@ -48,7 +48,7 @@ Public Class frmChart
         cnn3.ConnectionString = ("Data Source=BRANDON\SQLEXPRESS;Initial Catalog=OrderSystem;Integrated Security=True")
         cmd3.Connection = cnn3
 
-        Dim tblFields As String = "SELECT Top 8 FoodID, Quantity FROM FoodOrder"
+        Dim tblFields As String = "SELECT Top 8 item_id, quantity FROM Ordering "
         Dim oData As New SqlDataAdapter(tblFields, cnn3)
         Dim ds As New DataSet
         Dim oCmd As New SqlCommand(tblFields, cnn3)
@@ -61,8 +61,8 @@ Public Class frmChart
         Chart1.DataSource = ds.Tables("tblTagInfo")
         Dim Series1 As Series = Chart1.Series("Series1")
         Series1.Name = "Food"
-        Chart1.Series(Series1.Name).XValueMember = "Quantity"
-        Chart1.Series(Series1.Name).YValueMembers = "FoodID"
+        Chart1.Series(Series1.Name).XValueMember = "quantity"
+        Chart1.Series(Series1.Name).YValueMembers = "item_id"
 
         Chart1.Size = New System.Drawing.Size(780, 350)
 

@@ -7,7 +7,7 @@ Public Class frmEditMenu
 
     ' For Back button 
     Private Sub MnuBack_Click(sender As Object, e As EventArgs) Handles mnuBack.Click
-        frmViewMenu.Show()
+        frmAdmin.Show()
         Me.Close()
     End Sub
 
@@ -73,15 +73,7 @@ Public Class frmEditMenu
             txtPrice.Clear()
             LoadItems()
 
-            'ElseIf edit = 4 Then
-            '    DeleteDrink()
-            '    LoadDrink()
-            'ElseIf edit = 5 Then
-            '    UpdateFood()
-            '    LoadFood()
-            'ElseIf edit = 6 Then
-            '    UpdateDrink()
-            '    LoadDrink()
+
         End If
     End Sub
 
@@ -112,31 +104,7 @@ Public Class frmEditMenu
         End Try
     End Sub
 
-    'Sub AddDrink()
-    '    Dim strConnectionString As String
-    '    Dim sqlCnn As SqlConnection
-    '    Dim sqlCmd As SqlCommand
-    '    Dim adapter As New SqlDataAdapter
-    '    Dim ds As New DataSet
-    '    Dim strSql As String
 
-    '    'strConnectionString = "Data Source=LAPTOP-287EO590\HI;Initial Catalog=PikachuCafe;Integrated Security=True"
-    '    strConnectionString = "Data Source=BRANDON\SQLEXPRESS;Initial Catalog=OrderSystem;Integrated Security=True"
-
-    '    strSql = "Insert into Drink([DrinkID],[DrinkName],[DrinkPrice]) values('" & txtID.Text & "','" & txtName.Text & "','" & txtPrice.Text & "')"
-
-    '    sqlCnn = New SqlConnection(strConnectionString)
-    '    Try
-    '        sqlCnn.Open()
-    '        sqlCmd = New SqlCommand(strSql, sqlCnn)
-    '        sqlCmd.ExecuteNonQuery()
-    '        sqlCmd.Dispose()
-    '        sqlCnn.Close()
-    '        MessageBox.Show("Record is sucessfully added !")
-    '    Catch ex As Exception
-    '        MessageBox.Show("Cannot open connection !")
-    '    End Try
-    'End Sub
 
 
     ' Delete items from DB function
@@ -167,32 +135,7 @@ Public Class frmEditMenu
         End Try
     End Sub
 
-    'Sub DeleteDrink()
-    '    Dim strConnectionString As String
-    '    Dim sqlCnn As SqlConnection
-    '    Dim sqlCmd As SqlCommand
-    '    Dim adapter As New SqlDataAdapter
-    '    Dim ds As New DataSet
-    '    Dim strSql As String
 
-    '    'strConnectionString = "Data Source=LAPTOP-287EO590\HI;Initial Catalog=PikachuCafe;Integrated Security=True"
-    '    strConnectionString = "Data Source=BRANDON\SQLEXPRESS;Initial Catalog=OrderSystem;Integrated Security=True"
-
-    '    strSql = "Delete from Drink where DrinkID = '" & txtID.Text & "'"
-
-    '    sqlCnn = New SqlConnection(strConnectionString)
-
-    '    Try
-    '        sqlCnn.Open()
-    '        sqlCmd = New SqlCommand(strSql, sqlCnn)
-    '        sqlCmd.ExecuteNonQuery()
-    '        sqlCmd.Dispose()
-    '        sqlCnn.Close()
-    '        MessageBox.Show("Record is sucessfully updated !")
-    '    Catch ex As Exception
-    '        MessageBox.Show("Cannot open connection !")
-    '    End Try
-    'End Sub
 
     ' Update item in DB function 
     Sub UpdateItems()
@@ -222,62 +165,7 @@ Public Class frmEditMenu
         End Try
     End Sub
 
-    'Sub UpdateDrink()
-    '    Dim strConnectionString As String
-    '    Dim sqlCnn As SqlConnection
-    '    Dim sqlCmd As SqlCommand
-    '    Dim adapter As New SqlDataAdapter
-    '    Dim ds As New DataSet
-    '    Dim strSql As String
 
-    '    'strConnectionString = "Data Source=LAPTOP-287EO590\HI;Initial Catalog=PikachuCafe;Integrated Security=True"
-    '    strConnectionString = "Data Source=BRANDON\SQLEXPRESS;Initial Catalog=OrderSystem;Integrated Security=True"
-
-    '    strSql = "Update Drink Set DrinkName = '" & txtName.Text & "', DrinkPrice = '" & txtPrice.Text & "', Where DrinkID = '" & txtID.Text & "' "
-
-    '    sqlCnn = New SqlConnection(strConnectionString)
-
-    '    Try
-    '        sqlCnn.Open()
-    '        sqlCmd = New SqlCommand(strSql, sqlCnn)
-    '        sqlCmd.ExecuteNonQuery()
-    '        sqlCmd.Dispose()
-    '        sqlCnn.Close()
-    '        MessageBox.Show("Record is sucessfully updated !")
-    '    Catch ex As Exception
-    '        MessageBox.Show("Cannot open connection !")
-    '    End Try
-    'End Sub
-
-    'Private Sub MnuAddFood_Click(sender As Object, e As EventArgs)
-    '    LoadItems()
-    '    edit = 1
-    'End Sub
-
-    'Private Sub MnuAddDrink_Click(sender As Object, e As EventArgs) Handles mnuAddDrink.Click
-    '    LoadDrink()
-    '    edit = 2
-    'End Sub
-
-    'Private Sub MnuDeleteFood_Click(sender As Object, e As EventArgs)
-    '    LoadItems()
-    '    edit = 2
-    'End Sub
-
-    'Private Sub MnuDeleteDrink_Click(sender As Object, e As EventArgs) Handles mnuDeleteDrink.Click
-    '    LoadDrink()
-    '    edit = 4
-    'End Sub
-
-    'Private Sub MnuUpdateFood_Click(sender As Object, e As EventArgs)
-    '    LoadItems()
-    '    edit = 3
-    'End Sub
-
-    'Private Sub MnuUpdateDrink_Click(sender As Object, e As EventArgs) Handles mnuUpdateDrink.Click
-    '    LoadDrink()
-    '    edit = 6
-    'End Sub
 
     ' Load DB items
     Sub LoadItems()
@@ -307,37 +195,11 @@ Public Class frmEditMenu
         sqlCnn.Close()
     End Sub
 
-    'Sub LoadDrink()
 
-    '    Dim strConnectionString As String
-    '    Dim sqlCnn As SqlConnection
-    '    Dim adapter As New SqlDataAdapter
-    '    Dim MyCmdBld As New SqlCommandBuilder
-    '    Dim ds As New DataSet
-    '    Dim DrinkTable As New DataTable
-
-    '    'strConnectionString = "Data Source=LAPTOP-287EO590\HI;Initial Catalog=PikachuCafe;Integrated Security=True"
-    '    strConnectionString = "Data Source=BRANDON\SQLEXPRESS;Initial Catalog=OrderSystem;Integrated Security=True"
-
-    '    sqlCnn = New SqlConnection(strConnectionString)
-
-    '    sqlCnn.Open()
-    '    adapter = New SqlDataAdapter("SELECT * FROM Drink", sqlCnn)
-    '    MyCmdBld = New SqlCommandBuilder(adapter)
-    '    DrinkTable = New DataTable
-    '    adapter.Fill(DrinkTable)
-    '    dgvMenu.DataSource = DrinkTable
-    '    dgvMenu.Columns(0).HeaderText = "DrinkID"
-    '    dgvMenu.Columns(1).HeaderText = "Drink Name"
-    '    dgvMenu.Columns(2).HeaderText = "Drink Price"
-    '    sqlCnn.Close()
-    'End Sub
 
     Private Sub DgvMenu_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvMenu.CellContentClick
         LoadItems()
     End Sub
 
-    Private Sub frmEditMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 End Class

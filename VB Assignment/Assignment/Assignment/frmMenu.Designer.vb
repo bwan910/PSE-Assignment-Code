@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmMenu
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,11 +20,11 @@ Partial Class frmMenu
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMenu))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.mnuDailySpecial = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuMember = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuLogOut = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuCart = New System.Windows.Forms.ToolStripMenuItem()
@@ -60,8 +60,6 @@ Partial Class frmMenu
         Me.imgLemonade = New System.Windows.Forms.PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblDrinkName1 = New System.Windows.Forms.Label()
-        Me.lblOrderNum = New System.Windows.Forms.Label()
-        Me.lblEmpId = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.gpbFood.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -91,7 +89,7 @@ Partial Class frmMenu
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuStrip1.GripMargin = New System.Windows.Forms.Padding(2, 2, 0, 2)
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuDailySpecial, Me.mnuMenu, Me.mnuLogOut, Me.mnuCart})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuMember, Me.mnuMenu, Me.mnuLogOut, Me.mnuCart})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
@@ -99,13 +97,13 @@ Partial Class frmMenu
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'mnuDailySpecial
+        'mnuMember
         '
-        Me.mnuDailySpecial.Font = New System.Drawing.Font("Segoe Print", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.mnuDailySpecial.ForeColor = System.Drawing.Color.White
-        Me.mnuDailySpecial.Name = "mnuDailySpecial"
-        Me.mnuDailySpecial.Size = New System.Drawing.Size(172, 42)
-        Me.mnuDailySpecial.Text = "Daily Special"
+        Me.mnuMember.Font = New System.Drawing.Font("Segoe Print", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mnuMember.ForeColor = System.Drawing.Color.White
+        Me.mnuMember.Name = "mnuMember"
+        Me.mnuMember.Size = New System.Drawing.Size(122, 42)
+        Me.mnuMember.Text = "Member"
         '
         'mnuMenu
         '
@@ -488,26 +486,6 @@ Partial Class frmMenu
         Me.lblDrinkName1.TabIndex = 1
         Me.lblDrinkName1.Text = "Lemonade - RM 2"
         '
-        'lblOrderNum
-        '
-        Me.lblOrderNum.AutoSize = True
-        Me.lblOrderNum.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOrderNum.Location = New System.Drawing.Point(444, 355)
-        Me.lblOrderNum.Name = "lblOrderNum"
-        Me.lblOrderNum.Size = New System.Drawing.Size(26, 29)
-        Me.lblOrderNum.TabIndex = 5
-        Me.lblOrderNum.Text = "1"
-        '
-        'lblEmpId
-        '
-        Me.lblEmpId.AutoSize = True
-        Me.lblEmpId.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEmpId.Location = New System.Drawing.Point(444, 440)
-        Me.lblEmpId.Name = "lblEmpId"
-        Me.lblEmpId.Size = New System.Drawing.Size(26, 29)
-        Me.lblEmpId.TabIndex = 6
-        Me.lblEmpId.Text = "1"
-        '
         'frmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
@@ -516,8 +494,6 @@ Partial Class frmMenu
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(914, 780)
-        Me.Controls.Add(Me.lblEmpId)
-        Me.Controls.Add(Me.lblOrderNum)
         Me.Controls.Add(Me.gpbDrink)
         Me.Controls.Add(Me.gpbFood)
         Me.Controls.Add(Me.MenuStrip1)
@@ -562,7 +538,6 @@ Partial Class frmMenu
     End Sub
 
     Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents mnuDailySpecial As ToolStripMenuItem
     Friend WithEvents mnuMenu As ToolStripMenuItem
     Friend WithEvents mnuLogOut As ToolStripMenuItem
     Friend WithEvents gpbFood As GroupBox
@@ -598,6 +573,5 @@ Partial Class frmMenu
     Friend WithEvents nudLemonade As NumericUpDown
     Friend WithEvents Label4 As Label
     Friend WithEvents mnuCart As ToolStripMenuItem
-    Friend WithEvents lblOrderNum As Label
-    Friend WithEvents lblEmpId As Label
+    Friend WithEvents mnuMember As ToolStripMenuItem
 End Class

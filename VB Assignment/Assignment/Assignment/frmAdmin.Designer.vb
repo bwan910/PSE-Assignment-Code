@@ -25,12 +25,12 @@ Partial Class frmAdmin
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAdmin))
         Me.btnMenu = New System.Windows.Forms.Button()
         Me.btnEmployee = New System.Windows.Forms.Button()
-        Me.btnCustomer = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.mnuLogOut = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.btnChart = New System.Windows.Forms.Button()
+        Me.BtnMember = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,23 +66,6 @@ Partial Class frmAdmin
         Me.btnEmployee.Text = "Employee"
         Me.btnEmployee.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnEmployee.UseVisualStyleBackColor = False
-        '
-        'btnCustomer
-        '
-        Me.btnCustomer.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnCustomer.BackgroundImage = CType(resources.GetObject("btnCustomer.BackgroundImage"), System.Drawing.Image)
-        Me.btnCustomer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnCustomer.Cursor = System.Windows.Forms.Cursors.Default
-        Me.btnCustomer.Font = New System.Drawing.Font("Segoe Print", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnCustomer.Location = New System.Drawing.Point(576, 226)
-        Me.btnCustomer.Name = "btnCustomer"
-        Me.btnCustomer.Size = New System.Drawing.Size(167, 261)
-        Me.btnCustomer.TabIndex = 2
-        Me.btnCustomer.Text = "Customer"
-        Me.btnCustomer.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.btnCustomer.UseVisualStyleBackColor = False
         '
         'MenuStrip1
         '
@@ -135,6 +118,20 @@ Partial Class frmAdmin
         Me.btnChart.Text = "Chart"
         Me.btnChart.UseVisualStyleBackColor = True
         '
+        'BtnMember
+        '
+        Me.BtnMember.BackgroundImage = CType(resources.GetObject("BtnMember.BackgroundImage"), System.Drawing.Image)
+        Me.BtnMember.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnMember.Font = New System.Drawing.Font("Segoe Print", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnMember.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BtnMember.Location = New System.Drawing.Point(560, 226)
+        Me.BtnMember.Name = "BtnMember"
+        Me.BtnMember.Size = New System.Drawing.Size(167, 261)
+        Me.BtnMember.TabIndex = 7
+        Me.BtnMember.Text = "Member"
+        Me.BtnMember.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnMember.UseVisualStyleBackColor = False
+        '
         'frmAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
@@ -142,10 +139,10 @@ Partial Class frmAdmin
         Me.BackColor = System.Drawing.Color.Turquoise
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(795, 499)
+        Me.Controls.Add(Me.BtnMember)
         Me.Controls.Add(Me.btnChart)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.btnCustomer)
         Me.Controls.Add(Me.btnEmployee)
         Me.Controls.Add(Me.btnMenu)
         Me.Controls.Add(Me.MenuStrip1)
@@ -167,10 +164,10 @@ Partial Class frmAdmin
 
     Friend WithEvents btnMenu As Button
     Friend WithEvents btnEmployee As Button
-    Friend WithEvents btnCustomer As Button
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents mnuLogOut As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents btnChart As Button
+    Friend WithEvents BtnMember As Button
 End Class

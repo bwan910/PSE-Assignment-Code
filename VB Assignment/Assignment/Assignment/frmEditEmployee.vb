@@ -6,7 +6,7 @@ Public Class frmEditEmployee
 
     ' For back button 
     Private Sub MnuBack_Click(sender As Object, e As EventArgs) Handles mnuBack.Click
-        frmViewEmployee.Show()
+        frmAdmin.Show()
         Me.Close()
     End Sub
 

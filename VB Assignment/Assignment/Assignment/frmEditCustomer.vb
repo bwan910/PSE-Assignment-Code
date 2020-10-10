@@ -3,7 +3,7 @@ Imports System.Data
 Public Class frmEditCustomer
     Dim edit
     Private Sub MnuBack_Click(sender As Object, e As EventArgs) Handles mnuBack.Click
-        frmViewCustomer.Show()
+        frmMenu.Show()
         Me.Close()
     End Sub
 

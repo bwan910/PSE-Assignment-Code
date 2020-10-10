@@ -161,14 +161,10 @@ C:\Users\bwan9\OneDrive\Desktop\Weiwei\VB Assignment\Assignment\Assignment\bin\D
 C:\Users\bwan9\OneDrive\Desktop\Weiwei\VB Assignment\Assignment\Assignment\obj\Debug\Assignment.vbprojAssemblyReference.cache
 C:\Users\bwan9\OneDrive\Desktop\Weiwei\VB Assignment\Assignment\Assignment\obj\Debug\Assignment.frmAdmin.resources
 C:\Users\bwan9\OneDrive\Desktop\Weiwei\VB Assignment\Assignment\Assignment\obj\Debug\Assignment.frmChart.resources
-C:\Users\bwan9\OneDrive\Desktop\Weiwei\VB Assignment\Assignment\Assignment\obj\Debug\Assignment.frmDailySpecial.resources
 C:\Users\bwan9\OneDrive\Desktop\Weiwei\VB Assignment\Assignment\Assignment\obj\Debug\Assignment.frmEditEmployee.resources
 C:\Users\bwan9\OneDrive\Desktop\Weiwei\VB Assignment\Assignment\Assignment\obj\Debug\Assignment.frmEditCustomer.resources
 C:\Users\bwan9\OneDrive\Desktop\Weiwei\VB Assignment\Assignment\Assignment\obj\Debug\Assignment.frmEditMenu.resources
 C:\Users\bwan9\OneDrive\Desktop\Weiwei\VB Assignment\Assignment\Assignment\obj\Debug\Assignment.frmReceipt.resources
-C:\Users\bwan9\OneDrive\Desktop\Weiwei\VB Assignment\Assignment\Assignment\obj\Debug\Assignment.frmViewEmployee.resources
-C:\Users\bwan9\OneDrive\Desktop\Weiwei\VB Assignment\Assignment\Assignment\obj\Debug\Assignment.frmViewCustomer.resources
-C:\Users\bwan9\OneDrive\Desktop\Weiwei\VB Assignment\Assignment\Assignment\obj\Debug\Assignment.frmViewMenu.resources
 C:\Users\bwan9\OneDrive\Desktop\Weiwei\VB Assignment\Assignment\Assignment\obj\Debug\Assignment.frmLogin.resources
 C:\Users\bwan9\OneDrive\Desktop\Weiwei\VB Assignment\Assignment\Assignment\obj\Debug\Assignment.frmMenu.resources
 C:\Users\bwan9\OneDrive\Desktop\Weiwei\VB Assignment\Assignment\Assignment\obj\Debug\Assignment.frmMemberReceipt.resources

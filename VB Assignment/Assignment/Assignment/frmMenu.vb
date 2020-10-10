@@ -15,13 +15,10 @@ Public Class frmMenu
 
     End Sub
 
-    Private Sub MnuDailySpecial_Click(sender As Object, e As EventArgs) Handles mnuDailySpecial.Click
-        frmDailySpecial.Show()
-        Me.Close()
-    End Sub
+
 
     'This is the function to pull the query from our database
-    Private Sub LoadOrderNum()
+    Sub LoadOrderNum()
 
         'Reference: https://www.daniweb.com/programming/software-development/threads/388157/passing-value-from-database-to-a-variable#post1671970
 
@@ -47,7 +44,6 @@ Public Class frmMenu
         'After getting the latest orderNum, it will then add 1 into it for the new order that round
         orderNum = (CInt(latestOrder) + 1)
         'This label is just temporary to display the orderNum
-        lblOrderNum.Text = orderNum
         ''Close your connections and commands.
         sqlCnn.Close()
 
@@ -133,7 +129,11 @@ Public Class frmMenu
     Private Sub FrmMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Call the LoadOrderNum() function for every time the form loads
         LoadOrderNum()
-        lblEmpId.Text = empid
 
+    End Sub
+
+    Private Sub mnuMember_Click(sender As Object, e As EventArgs) Handles mnuMember.Click
+        frmEditCustomer.Show()
+        Me.Close()
     End Sub
 End Class

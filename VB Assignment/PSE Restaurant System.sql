@@ -61,7 +61,12 @@ SELECT MAX(order_num) AS Latest From Ordering
 
 SELECT emp_id AS EMPID From Employee Where emp_name = 'Brand'
 
-SELECT Menu.item_id,Menu.item_name,Ordering.quantity,Ordering.total_price
-FROM Ordering 
-JOIN Menu ON Ordering.item_id = Menu.item_id
-WHERE order_num = 107
+--SELECT Menu.item_id,Menu.item_name,Ordering.quantity,Ordering.total_price
+--FROM Ordering 
+--JOIN Menu ON Ordering.item_id = Menu.item_id
+--WHERE order_num = 107
+
+
+UPDATE Ordering SET member_id = 3 WHERE order_num = 118
+
+SELECT Top 8 item_id, quantity FROM Ordering

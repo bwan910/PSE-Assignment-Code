@@ -3,34 +3,44 @@ Imports System.Data.SqlClient
 Imports System.Data
 
 Public Class frmReceipt
+    Dim ordernum As Integer
     Private Sub CmnuPrint_Click(sender As Object, e As EventArgs) Handles cmnuPrint.Click
 
         Me.PrintForm1.Print()
 
     End Sub
 
-    'Private Sub frmReceipt_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+    Sub LoadOrderNum()
 
-    '    Dim strConnectionString As String
-    '    Dim sqlCnn As SqlConnection
-    '    Dim sqlCmd As SqlCommand
-    '    Dim adapter As New SqlDataAdapter
-    '    Dim ds As New DataSet
-    '    Dim strSql As String
+        'Reference: https://www.daniweb.com/programming/software-development/threads/388157/passing-value-from-database-to-a-variable#post1671970
 
-    '    strConnectionString = "Data Source=BRANDON\SQLEXPRESS;Initial Catalog=OrderSystem;Integrated Security=True"
+        Dim sqlCnn As SqlConnection
+        Dim strCnn As String = "Data Source=BRANDON\SQLEXPRESS;Initial Catalog=OrderSystem;Integrated Security=True"
+        sqlCnn = New SqlConnection(strCnn)
+        sqlCnn.Open()
+        Dim ds As SqlDataReader
+        'The query is to take the Max a.k.a the latest ordernum and put it in a "table" with the column name "Latest"
+        Dim comm As New SqlCommand("SELECT MAX(order_num) AS Latest From Ordering", sqlCnn)
 
+        '' If ur using Sp then Commandtype= CommandType.StoredProcedure if it is Text then comm.CommandType=CommandType.Text
+        comm.CommandType = CommandType.Text
 
-    '    sqlCnn = New SqlConnection(strConnectionString)
+        ds = comm.ExecuteReader
+        If ds.HasRows Then
+            While ds.Read
+                'This will pass the item in the "Latest" column into the variable latestOrder
+                ordernum = ds.Item("Latest")
 
-    '    strSql = "DELETE FROM FoodOrder DELETE FROM DrinkOrder"
-    '    sqlCnn.Open()
-    '    sqlCmd = New SqlCommand(strSql, sqlCnn)
-    '    sqlCmd.ExecuteNonQuery()
-    '    sqlCmd.Dispose()
-    '    sqlCnn.Close()
+            End While
+        End If
+        'After getting the latest orderNum, it will then add 1 into it for the new order that round
+        'orderNum = (CInt(latestOrder) + 1)
+        'This label is just temporary to display the orderNum
+        'lblOrderNum.Text = orderNum
+        ''Close your connections and commands.
+        sqlCnn.Close()
 
-    'End Sub
+    End Sub
 
     Private Sub LoadItems()
 
@@ -50,7 +60,7 @@ Public Class frmReceipt
         adapter = New SqlDataAdapter("SELECT Menu.item_id,Menu.item_name,Ordering.quantity,Ordering.total_price
 FROM Ordering 
 JOIN Menu ON Ordering.item_id = Menu.item_id
-WHERE order_num = '" & frmMenu.orderNum & "' ", sqlCnn)
+WHERE order_num = '" & ordernum & "' ", sqlCnn)
         MyCmdBld = New SqlCommandBuilder(adapter)
         FoodOrderTable = New DataTable
         adapter.Fill(FoodOrderTable)
@@ -65,7 +75,8 @@ WHERE order_num = '" & frmMenu.orderNum & "' ", sqlCnn)
 
 
     Private Sub FrmReceipt_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        LoadOrderNum()
+        lblOrderId.Text = ordernum
         LoadItems()
         CalculateTotal()
         lblTime.Text = Now.ToLocalTime

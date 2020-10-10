@@ -52,12 +52,16 @@
     </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\..\..\..\Downloads\Guna.UI2_WinForms_v2.0.1.1\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
@@ -110,24 +114,6 @@
     <Compile Include="frmReceipt.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmViewEmployee.Designer.vb">
-      <DependentUpon>frmViewEmployee.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmViewEmployee.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmViewCustomer.Designer.vb">
-      <DependentUpon>frmViewCustomer.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmViewCustomer.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmViewMenu.Designer.vb">
-      <DependentUpon>frmViewMenu.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmViewMenu.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmAdmin.Designer.vb">
       <DependentUpon>frmAdmin.vb</DependentUpon>
     </Compile>
@@ -144,13 +130,6 @@
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDailySpecial.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDailySpecial.Designer.vb">
-      <DependentUpon>frmDailySpecial.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMemberReceipt.Designer.vb">
@@ -188,9 +167,6 @@
     <EmbeddedResource Include="frmChart.resx">
       <DependentUpon>frmChart.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDailySpecial.resx">
-      <DependentUpon>frmDailySpecial.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmEditEmployee.resx">
       <DependentUpon>frmEditEmployee.vb</DependentUpon>
     </EmbeddedResource>
@@ -202,15 +178,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReceipt.resx">
       <DependentUpon>frmReceipt.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmViewEmployee.resx">
-      <DependentUpon>frmViewEmployee.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmViewCustomer.resx">
-      <DependentUpon>frmViewCustomer.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmViewMenu.resx">
-      <DependentUpon>frmViewMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
