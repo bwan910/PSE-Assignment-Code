@@ -30,8 +30,9 @@ Public Class frmLogin
         sqlCnn.Close()
     End Sub
 
-    Private Sub BtnEnter_Click(sender As Object, e As EventArgs) Handles btnEnter.Click
 
+
+    Private Sub btnEnter_Click_1(sender As Object, e As EventArgs) Handles btnEnter.Click
         Dim strConnectionString As String
         Dim sqlCnn As SqlConnection
 
@@ -68,8 +69,28 @@ Public Class frmLogin
         If message = True Then
             MessageBox.Show("Not an Employee!")
         End If
+    End Sub
 
+    Private Sub cboxPassword_CheckedChanged(sender As Object, e As EventArgs) Handles cboxPassword.CheckedChanged
+        If cboxPassword.Checked = True Then
+            txtPassword.UseSystemPasswordChar = False
+        Else
+            txtPassword.UseSystemPasswordChar = True
+
+        End If
+    End Sub
+
+    Private Sub frmLogin_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles MyBase.Paint
+        Dim myGraphics As Graphics = Me.CreateGraphics
+        Dim pen As Pen
+        pen = New Pen(Brushes.White, 2)
+        myGraphics.DrawLine(pen, 680, 232, 500, 232) 'Textbox line for Name
+        ' x1, y1, x2, y2
+        myGraphics.DrawLine(pen, 680, 330, 500, 330) 'Textbox line for Password
 
     End Sub
 
+    Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

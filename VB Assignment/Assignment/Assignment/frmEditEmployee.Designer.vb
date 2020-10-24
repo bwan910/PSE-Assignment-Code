@@ -33,12 +33,12 @@ Partial Class frmEditEmployee
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtEmpName = New System.Windows.Forms.TextBox()
-        Me.txtEmpPhone = New System.Windows.Forms.TextBox()
-        Me.txtEmpPassword = New System.Windows.Forms.TextBox()
-        Me.btnEdit = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtEmpID = New System.Windows.Forms.TextBox()
+        Me.txtEmpID = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtEmpName = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtEmpPhone = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtEmpPassword = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.btnEdit = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.dgvEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -47,11 +47,11 @@ Partial Class frmEditEmployee
         '
         Me.dgvEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEmployee.Location = New System.Drawing.Point(470, 64)
+        Me.dgvEmployee.Location = New System.Drawing.Point(472, 102)
         Me.dgvEmployee.Name = "dgvEmployee"
         Me.dgvEmployee.RowHeadersWidth = 62
         Me.dgvEmployee.RowTemplate.Height = 28
-        Me.dgvEmployee.Size = New System.Drawing.Size(421, 423)
+        Me.dgvEmployee.Size = New System.Drawing.Size(600, 423)
         Me.dgvEmployee.TabIndex = 0
         '
         'MenuStrip1
@@ -62,7 +62,7 @@ Partial Class frmEditEmployee
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuBack, Me.mnuAdd, Me.mnuDelete, Me.mnuUpdate, Me.mnuLogOut})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(916, 46)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1123, 46)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -112,7 +112,7 @@ Partial Class frmEditEmployee
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("MV Boli", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(45, 159)
+        Me.Label2.Location = New System.Drawing.Point(45, 189)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(90, 29)
         Me.Label2.TabIndex = 3
@@ -123,7 +123,7 @@ Partial Class frmEditEmployee
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("MV Boli", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(44, 303)
+        Me.Label4.Location = New System.Drawing.Point(44, 340)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(124, 29)
         Me.Label4.TabIndex = 5
@@ -134,55 +134,18 @@ Partial Class frmEditEmployee
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("MV Boli", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(42, 233)
+        Me.Label5.Location = New System.Drawing.Point(42, 268)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(93, 29)
         Me.Label5.TabIndex = 6
         Me.Label5.Text = "Phone :"
-        '
-        'txtEmpName
-        '
-        Me.txtEmpName.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEmpName.Location = New System.Drawing.Point(147, 159)
-        Me.txtEmpName.Name = "txtEmpName"
-        Me.txtEmpName.Size = New System.Drawing.Size(224, 32)
-        Me.txtEmpName.TabIndex = 8
-        '
-        'txtEmpPhone
-        '
-        Me.txtEmpPhone.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEmpPhone.Location = New System.Drawing.Point(147, 233)
-        Me.txtEmpPhone.Name = "txtEmpPhone"
-        Me.txtEmpPhone.Size = New System.Drawing.Size(224, 32)
-        Me.txtEmpPhone.TabIndex = 10
-        '
-        'txtEmpPassword
-        '
-        Me.txtEmpPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEmpPassword.Location = New System.Drawing.Point(184, 300)
-        Me.txtEmpPassword.Name = "txtEmpPassword"
-        Me.txtEmpPassword.Size = New System.Drawing.Size(224, 32)
-        Me.txtEmpPassword.TabIndex = 11
-        '
-        'btnEdit
-        '
-        Me.btnEdit.BackColor = System.Drawing.Color.Black
-        Me.btnEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.btnEdit.ForeColor = System.Drawing.Color.White
-        Me.btnEdit.Location = New System.Drawing.Point(221, 415)
-        Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(111, 47)
-        Me.btnEdit.TabIndex = 12
-        Me.btnEdit.Text = "Update"
-        Me.btnEdit.UseVisualStyleBackColor = False
-        Me.btnEdit.Visible = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("MV Boli", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(45, 98)
+        Me.Label1.Location = New System.Drawing.Point(45, 115)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(53, 29)
         Me.Label1.TabIndex = 2
@@ -190,21 +153,132 @@ Partial Class frmEditEmployee
         '
         'txtEmpID
         '
-        Me.txtEmpID.Enabled = False
-        Me.txtEmpID.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEmpID.Location = New System.Drawing.Point(108, 97)
+        Me.txtEmpID.BorderColor = System.Drawing.Color.Black
+        Me.txtEmpID.BorderRadius = 13
+        Me.txtEmpID.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtEmpID.DefaultText = ""
+        Me.txtEmpID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtEmpID.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtEmpID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtEmpID.DisabledState.Parent = Me.txtEmpID
+        Me.txtEmpID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtEmpID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtEmpID.FocusedState.Parent = Me.txtEmpID
+        Me.txtEmpID.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtEmpID.ForeColor = System.Drawing.Color.Black
+        Me.txtEmpID.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtEmpID.HoverState.Parent = Me.txtEmpID
+        Me.txtEmpID.Location = New System.Drawing.Point(171, 115)
         Me.txtEmpID.Name = "txtEmpID"
-        Me.txtEmpID.Size = New System.Drawing.Size(224, 32)
-        Me.txtEmpID.TabIndex = 7
+        Me.txtEmpID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtEmpID.PlaceholderText = ""
+        Me.txtEmpID.SelectedText = ""
+        Me.txtEmpID.ShadowDecoration.Parent = Me.txtEmpID
+        Me.txtEmpID.Size = New System.Drawing.Size(233, 36)
+        Me.txtEmpID.TabIndex = 14
+        '
+        'txtEmpName
+        '
+        Me.txtEmpName.BorderColor = System.Drawing.Color.Black
+        Me.txtEmpName.BorderRadius = 13
+        Me.txtEmpName.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtEmpName.DefaultText = ""
+        Me.txtEmpName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtEmpName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtEmpName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtEmpName.DisabledState.Parent = Me.txtEmpName
+        Me.txtEmpName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtEmpName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtEmpName.FocusedState.Parent = Me.txtEmpName
+        Me.txtEmpName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtEmpName.ForeColor = System.Drawing.Color.Black
+        Me.txtEmpName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtEmpName.HoverState.Parent = Me.txtEmpName
+        Me.txtEmpName.Location = New System.Drawing.Point(171, 189)
+        Me.txtEmpName.Name = "txtEmpName"
+        Me.txtEmpName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtEmpName.PlaceholderText = ""
+        Me.txtEmpName.SelectedText = ""
+        Me.txtEmpName.ShadowDecoration.Parent = Me.txtEmpName
+        Me.txtEmpName.Size = New System.Drawing.Size(233, 36)
+        Me.txtEmpName.TabIndex = 15
+        '
+        'txtEmpPhone
+        '
+        Me.txtEmpPhone.BorderColor = System.Drawing.Color.Black
+        Me.txtEmpPhone.BorderRadius = 13
+        Me.txtEmpPhone.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtEmpPhone.DefaultText = ""
+        Me.txtEmpPhone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtEmpPhone.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtEmpPhone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtEmpPhone.DisabledState.Parent = Me.txtEmpPhone
+        Me.txtEmpPhone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtEmpPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtEmpPhone.FocusedState.Parent = Me.txtEmpPhone
+        Me.txtEmpPhone.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtEmpPhone.ForeColor = System.Drawing.Color.Black
+        Me.txtEmpPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtEmpPhone.HoverState.Parent = Me.txtEmpPhone
+        Me.txtEmpPhone.Location = New System.Drawing.Point(171, 261)
+        Me.txtEmpPhone.Name = "txtEmpPhone"
+        Me.txtEmpPhone.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtEmpPhone.PlaceholderText = ""
+        Me.txtEmpPhone.SelectedText = ""
+        Me.txtEmpPhone.ShadowDecoration.Parent = Me.txtEmpPhone
+        Me.txtEmpPhone.Size = New System.Drawing.Size(233, 36)
+        Me.txtEmpPhone.TabIndex = 16
+        '
+        'txtEmpPassword
+        '
+        Me.txtEmpPassword.BorderColor = System.Drawing.Color.Black
+        Me.txtEmpPassword.BorderRadius = 13
+        Me.txtEmpPassword.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtEmpPassword.DefaultText = ""
+        Me.txtEmpPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtEmpPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtEmpPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtEmpPassword.DisabledState.Parent = Me.txtEmpPassword
+        Me.txtEmpPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtEmpPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtEmpPassword.FocusedState.Parent = Me.txtEmpPassword
+        Me.txtEmpPassword.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtEmpPassword.ForeColor = System.Drawing.Color.Black
+        Me.txtEmpPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtEmpPassword.HoverState.Parent = Me.txtEmpPassword
+        Me.txtEmpPassword.Location = New System.Drawing.Point(171, 340)
+        Me.txtEmpPassword.Name = "txtEmpPassword"
+        Me.txtEmpPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtEmpPassword.PlaceholderText = ""
+        Me.txtEmpPassword.SelectedText = ""
+        Me.txtEmpPassword.ShadowDecoration.Parent = Me.txtEmpPassword
+        Me.txtEmpPassword.Size = New System.Drawing.Size(233, 36)
+        Me.txtEmpPassword.TabIndex = 17
+        '
+        'btnEdit
+        '
+        Me.btnEdit.BackColor = System.Drawing.Color.LemonChiffon
+        Me.btnEdit.BorderRadius = 20
+        Me.btnEdit.CheckedState.Parent = Me.btnEdit
+        Me.btnEdit.CustomImages.Parent = Me.btnEdit
+        Me.btnEdit.FillColor = System.Drawing.Color.LightGray
+        Me.btnEdit.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEdit.ForeColor = System.Drawing.Color.Black
+        Me.btnEdit.HoverState.Parent = Me.btnEdit
+        Me.btnEdit.Location = New System.Drawing.Point(116, 444)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.ShadowDecoration.Parent = Me.btnEdit
+        Me.btnEdit.Size = New System.Drawing.Size(201, 64)
+        Me.btnEdit.TabIndex = 18
+        Me.btnEdit.Text = "Update"
         '
         'frmEditEmployee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LemonChiffon
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(916, 517)
+        Me.ClientSize = New System.Drawing.Size(1123, 644)
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.txtEmpPassword)
         Me.Controls.Add(Me.txtEmpPhone)
@@ -239,10 +313,10 @@ Partial Class frmEditEmployee
     Friend WithEvents Label2 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents txtEmpName As TextBox
-    Friend WithEvents txtEmpPhone As TextBox
-    Friend WithEvents txtEmpPassword As TextBox
-    Friend WithEvents btnEdit As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtEmpID As TextBox
+    Friend WithEvents txtEmpID As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtEmpName As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtEmpPhone As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtEmpPassword As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents btnEdit As Guna.UI2.WinForms.Guna2Button
 End Class

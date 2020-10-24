@@ -36,11 +36,13 @@ Partial Class frmMemberReceipt
         Me.lblOrderId = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.cmnuPrint = New System.Windows.Forms.ToolStripMenuItem()
+        Me.cmnuNewOrder = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
         Me.dgvFoodOrder = New System.Windows.Forms.DataGridView()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.lblAmount = New System.Windows.Forms.Label()
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
+        Me.Guna2Separator1 = New Guna.UI2.WinForms.Guna2Separator()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.dgvFoodOrder, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -50,7 +52,7 @@ Partial Class frmMemberReceipt
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(178, 399)
+        Me.Label1.Location = New System.Drawing.Point(423, 551)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(221, 30)
@@ -62,7 +64,7 @@ Partial Class frmMemberReceipt
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(13, 559)
+        Me.Label2.Location = New System.Drawing.Point(541, 75)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(84, 30)
@@ -74,7 +76,7 @@ Partial Class frmMemberReceipt
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(164, 469)
+        Me.Label4.Location = New System.Drawing.Point(438, 508)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(218, 30)
@@ -86,7 +88,7 @@ Partial Class frmMemberReceipt
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(161, 434)
+        Me.Label5.Location = New System.Drawing.Point(435, 473)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(221, 30)
@@ -98,8 +100,8 @@ Partial Class frmMemberReceipt
         Me.lblTotal.AutoSize = True
         Me.lblTotal.BackColor = System.Drawing.Color.Transparent
         Me.lblTotal.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblTotal.Location = New System.Drawing.Point(417, 399)
+        Me.lblTotal.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblTotal.Location = New System.Drawing.Point(490, 432)
         Me.lblTotal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -112,8 +114,8 @@ Partial Class frmMemberReceipt
         Me.lblServiceTax.AutoSize = True
         Me.lblServiceTax.BackColor = System.Drawing.Color.Transparent
         Me.lblServiceTax.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblServiceTax.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblServiceTax.Location = New System.Drawing.Point(417, 434)
+        Me.lblServiceTax.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblServiceTax.Location = New System.Drawing.Point(691, 473)
         Me.lblServiceTax.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblServiceTax.Name = "lblServiceTax"
         Me.lblServiceTax.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -126,8 +128,8 @@ Partial Class frmMemberReceipt
         Me.lblDiscount.AutoSize = True
         Me.lblDiscount.BackColor = System.Drawing.Color.Transparent
         Me.lblDiscount.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDiscount.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblDiscount.Location = New System.Drawing.Point(417, 469)
+        Me.lblDiscount.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblDiscount.Location = New System.Drawing.Point(691, 508)
         Me.lblDiscount.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDiscount.Name = "lblDiscount"
         Me.lblDiscount.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -140,8 +142,8 @@ Partial Class frmMemberReceipt
         Me.lblTime.AutoSize = True
         Me.lblTime.BackColor = System.Drawing.Color.Transparent
         Me.lblTime.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTime.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblTime.Location = New System.Drawing.Point(74, 559)
+        Me.lblTime.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblTime.Location = New System.Drawing.Point(602, 75)
         Me.lblTime.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTime.Name = "lblTime"
         Me.lblTime.Size = New System.Drawing.Size(70, 30)
@@ -153,7 +155,7 @@ Partial Class frmMemberReceipt
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(190, 9)
+        Me.Label7.Location = New System.Drawing.Point(37, 75)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(125, 30)
         Me.Label7.TabIndex = 13
@@ -164,8 +166,8 @@ Partial Class frmMemberReceipt
         Me.lblOrderId.AutoSize = True
         Me.lblOrderId.BackColor = System.Drawing.Color.Transparent
         Me.lblOrderId.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOrderId.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblOrderId.Location = New System.Drawing.Point(321, 9)
+        Me.lblOrderId.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblOrderId.Location = New System.Drawing.Point(168, 75)
         Me.lblOrderId.Name = "lblOrderId"
         Me.lblOrderId.Size = New System.Drawing.Size(49, 30)
         Me.lblOrderId.TabIndex = 14
@@ -174,15 +176,21 @@ Partial Class frmMemberReceipt
         'ContextMenuStrip1
         '
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cmnuPrint})
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cmnuPrint, Me.cmnuNewOrder})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(121, 36)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(171, 68)
         '
         'cmnuPrint
         '
         Me.cmnuPrint.Name = "cmnuPrint"
-        Me.cmnuPrint.Size = New System.Drawing.Size(120, 32)
+        Me.cmnuPrint.Size = New System.Drawing.Size(170, 32)
         Me.cmnuPrint.Text = "Print"
+        '
+        'cmnuNewOrder
+        '
+        Me.cmnuNewOrder.Name = "cmnuNewOrder"
+        Me.cmnuNewOrder.Size = New System.Drawing.Size(170, 32)
+        Me.cmnuNewOrder.Text = "New Order"
         '
         'PrintDialog1
         '
@@ -194,7 +202,7 @@ Partial Class frmMemberReceipt
         Me.dgvFoodOrder.AllowUserToDeleteRows = False
         Me.dgvFoodOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvFoodOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvFoodOrder.Location = New System.Drawing.Point(69, 49)
+        Me.dgvFoodOrder.Location = New System.Drawing.Point(33, 122)
         Me.dgvFoodOrder.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvFoodOrder.Name = "dgvFoodOrder"
         Me.dgvFoodOrder.ReadOnly = True
@@ -202,29 +210,16 @@ Partial Class frmMemberReceipt
         Me.dgvFoodOrder.RowTemplate.Height = 28
         Me.dgvFoodOrder.ShowCellToolTips = False
         Me.dgvFoodOrder.ShowEditingIcon = False
-        Me.dgvFoodOrder.Size = New System.Drawing.Size(402, 329)
+        Me.dgvFoodOrder.Size = New System.Drawing.Size(697, 255)
         Me.dgvFoodOrder.TabIndex = 15
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(-42, 520)
-        Me.Label3.Name = "Label3"
-        Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label3.Size = New System.Drawing.Size(852, 26)
-        Me.Label3.TabIndex = 16
-        Me.Label3.Text = "---------------------------------------------------------------------------------" &
-    "---------------------------------------"
         '
         'lblAmount
         '
         Me.lblAmount.AutoSize = True
         Me.lblAmount.BackColor = System.Drawing.Color.Transparent
         Me.lblAmount.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAmount.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblAmount.Location = New System.Drawing.Point(387, 520)
+        Me.lblAmount.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblAmount.Location = New System.Drawing.Point(641, 551)
         Me.lblAmount.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblAmount.Name = "lblAmount"
         Me.lblAmount.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -240,16 +235,36 @@ Partial Class frmMemberReceipt
         Me.PrintForm1.PrinterSettings = CType(resources.GetObject("PrintForm1.PrinterSettings"), System.Drawing.Printing.PrinterSettings)
         Me.PrintForm1.PrintFileName = Nothing
         '
+        'Guna2Separator1
+        '
+        Me.Guna2Separator1.FillColor = System.Drawing.Color.Black
+        Me.Guna2Separator1.FillStyle = System.Drawing.Drawing2D.DashStyle.Dash
+        Me.Guna2Separator1.FillThickness = 2
+        Me.Guna2Separator1.Location = New System.Drawing.Point(-3, 401)
+        Me.Guna2Separator1.Name = "Guna2Separator1"
+        Me.Guna2Separator1.Size = New System.Drawing.Size(780, 17)
+        Me.Guna2Separator1.TabIndex = 18
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(292, 22)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(189, 46)
+        Me.Label3.TabIndex = 19
+        Me.Label3.Text = "Cafe 123"
+        '
         'frmMemberReceipt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LemonChiffon
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(533, 610)
+        Me.ClientSize = New System.Drawing.Size(778, 604)
         Me.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.Controls.Add(Me.lblAmount)
         Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Guna2Separator1)
+        Me.Controls.Add(Me.lblAmount)
         Me.Controls.Add(Me.dgvFoodOrder)
         Me.Controls.Add(Me.lblOrderId)
         Me.Controls.Add(Me.Label7)
@@ -288,7 +303,9 @@ Partial Class frmMemberReceipt
     Friend WithEvents cmnuPrint As ToolStripMenuItem
     Friend WithEvents PrintDialog1 As PrintDialog
     Friend WithEvents dgvFoodOrder As DataGridView
-    Friend WithEvents Label3 As Label
     Friend WithEvents lblAmount As Label
     Friend WithEvents PrintForm1 As PowerPacks.Printing.PrintForm
+    Friend WithEvents cmnuNewOrder As ToolStripMenuItem
+    Friend WithEvents Guna2Separator1 As Guna.UI2.WinForms.Guna2Separator
+    Friend WithEvents Label3 As Label
 End Class

@@ -103,7 +103,7 @@ WHERE order_num = '" & ordernum & "' ", sqlCnn)
         lblServiceTax.Text = serviceTax.ToString
 
         totalAmount = total + serviceTax
-        lblAmount.Text = totalAmount.ToString("C")
+        'lblAmount.Text = totalAmount.ToString("C")
 
     End Sub
 

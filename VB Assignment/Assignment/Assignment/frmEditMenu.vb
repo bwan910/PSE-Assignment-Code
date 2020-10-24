@@ -22,7 +22,6 @@ Public Class frmEditMenu
         edit = 1
         btnEdit.Visible = True
         btnEdit.Text = "Add"
-        txtID.Enabled = False
         txtName.Enabled = True
         txtPrice.Enabled = True
     End Sub
@@ -47,35 +46,7 @@ Public Class frmEditMenu
         txtPrice.Enabled = True
     End Sub
 
-    ' For Edit Button. This button shares the Add, Delete Update function
-    Private Sub BtnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
-        If edit = 1 Then
-            LoadItems()
-            AddItems()
-            txtID.Clear()
-            txtName.Clear()
-            txtPrice.Clear()
-            LoadItems()
 
-        ElseIf edit = 2 Then
-            LoadItems()
-            DeleteItems()
-            txtID.Clear()
-            txtName.Clear()
-            txtPrice.Clear()
-            LoadItems()
-
-        ElseIf edit = 3 Then
-            LoadItems()
-            UpdateItems()
-            txtID.Clear()
-            txtName.Clear()
-            txtPrice.Clear()
-            LoadItems()
-
-
-        End If
-    End Sub
 
     ' Add Items to DB function
     Sub AddItems()
@@ -89,7 +60,13 @@ Public Class frmEditMenu
         'strConnectionString = "Data Source=LAPTOP-287EO590\HI;Initial Catalog=PikachuCafe;Integrated Security=True"
         strConnectionString = "Data Source=BRANDON\SQLEXPRESS;Initial Catalog=OrderSystem;Integrated Security=True"
 
-        strSql = "Insert into Menu([item_name],[item_price],[item_type]) values('" & txtName.Text & "','" & txtPrice.Text & "', '" & cboxItemType.SelectedItem & "')"
+        If txtID.Text.Length > 0 And txtID.Text.Length < 4 AndAlso
+            txtName.Text.Length > 0 And txtName.Text.Length < 30 AndAlso
+            txtPrice.Text.Length > 0 And txtPrice.Text.Length < 6 Then
+            strSql = "Insert into Menu VALUES('" & txtID.Text & "', '" & txtName.Text & "','" & txtPrice.Text & "', '" & cboxItemType.SelectedItem.ToString & "')"
+        Else
+            MessageBox.Show("Please be sure you fill in all data and ensure your text length is not too long")
+        End If
 
         sqlCnn = New SqlConnection(strConnectionString)
         Try
@@ -148,8 +125,13 @@ Public Class frmEditMenu
 
         'strConnectionString = "Data Source=LAPTOP-287EO590\HI;Initial Catalog=PikachuCafe;Integrated Security=True"
         strConnectionString = "Data Source=BRANDON\SQLEXPRESS;Initial Catalog=OrderSystem;Integrated Security=True"
-
-        strSql = "Update Menu Set item_name = '" & txtName.Text & "', item_price = '" & txtPrice.Text & "', item_type = '" & cboxItemType.SelectedItem & "' Where item_id = '" & txtID.Text & "' "
+        If txtID.Text.Length > 0 And txtID.Text.Length < 4 AndAlso
+            txtName.Text.Length > 0 And txtName.Text.Length < 30 AndAlso
+            txtPrice.Text.Length > 0 And txtPrice.Text.Length < 6 Then
+            strSql = "Update Menu Set item_name = '" & txtName.Text & "', item_price = '" & txtPrice.Text & "', item_type = '" & cboxItemType.SelectedItem & "' Where item_id = '" & txtID.Text & "' "
+        Else
+            MessageBox.Show("Please be sure you fill in all data and ensure your text length is not too long")
+        End If
 
         sqlCnn = New SqlConnection(strConnectionString)
 
@@ -197,9 +179,38 @@ Public Class frmEditMenu
 
 
 
-    Private Sub DgvMenu_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvMenu.CellContentClick
+    Private Sub frmEditMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadItems()
     End Sub
 
+    ' For Edit Button. This button shares the Add, Delete Update function
 
+    Private Sub btnEdit_Click_1(sender As Object, e As EventArgs) Handles btnEdit.Click
+        If edit = 1 Then
+            LoadItems()
+            AddItems()
+            txtID.Clear()
+            txtName.Clear()
+            txtPrice.Clear()
+            LoadItems()
+
+        ElseIf edit = 2 Then
+            LoadItems()
+            DeleteItems()
+            txtID.Clear()
+            txtName.Clear()
+            txtPrice.Clear()
+            LoadItems()
+
+        ElseIf edit = 3 Then
+            LoadItems()
+            UpdateItems()
+            txtID.Clear()
+            txtName.Clear()
+            txtPrice.Clear()
+            LoadItems()
+
+
+        End If
+    End Sub
 End Class

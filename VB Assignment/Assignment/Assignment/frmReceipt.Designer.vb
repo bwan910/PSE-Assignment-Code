@@ -24,8 +24,6 @@ Partial Class frmReceipt
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmReceipt))
-        Me.lblAmount = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.dgvFoodOrder = New System.Windows.Forms.DataGridView()
         Me.lblOrderId = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -39,37 +37,11 @@ Partial Class frmReceipt
         Me.cmnuPrint = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Guna2Separator1 = New Guna.UI2.WinForms.Guna2Separator()
         CType(Me.dgvFoodOrder, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'lblAmount
-        '
-        Me.lblAmount.AutoSize = True
-        Me.lblAmount.BackColor = System.Drawing.Color.Transparent
-        Me.lblAmount.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAmount.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblAmount.Location = New System.Drawing.Point(397, 491)
-        Me.lblAmount.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblAmount.Name = "lblAmount"
-        Me.lblAmount.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.lblAmount.Size = New System.Drawing.Size(91, 30)
-        Me.lblAmount.TabIndex = 31
-        Me.lblAmount.Text = "Amount"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label3.Location = New System.Drawing.Point(-77, 495)
-        Me.Label3.Name = "Label3"
-        Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label3.Size = New System.Drawing.Size(852, 26)
-        Me.Label3.TabIndex = 30
-        Me.Label3.Text = "---------------------------------------------------------------------------------" &
-    "---------------------------------------"
         '
         'dgvFoodOrder
         '
@@ -77,7 +49,7 @@ Partial Class frmReceipt
         Me.dgvFoodOrder.AllowUserToDeleteRows = False
         Me.dgvFoodOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvFoodOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvFoodOrder.Location = New System.Drawing.Point(81, 64)
+        Me.dgvFoodOrder.Location = New System.Drawing.Point(85, 116)
         Me.dgvFoodOrder.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvFoodOrder.Name = "dgvFoodOrder"
         Me.dgvFoodOrder.ReadOnly = True
@@ -85,7 +57,7 @@ Partial Class frmReceipt
         Me.dgvFoodOrder.RowTemplate.Height = 28
         Me.dgvFoodOrder.ShowCellToolTips = False
         Me.dgvFoodOrder.ShowEditingIcon = False
-        Me.dgvFoodOrder.Size = New System.Drawing.Size(753, 330)
+        Me.dgvFoodOrder.Size = New System.Drawing.Size(598, 266)
         Me.dgvFoodOrder.TabIndex = 29
         '
         'lblOrderId
@@ -93,8 +65,8 @@ Partial Class frmReceipt
         Me.lblOrderId.AutoSize = True
         Me.lblOrderId.BackColor = System.Drawing.Color.Transparent
         Me.lblOrderId.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOrderId.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblOrderId.Location = New System.Drawing.Point(331, 30)
+        Me.lblOrderId.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblOrderId.Location = New System.Drawing.Point(198, 59)
         Me.lblOrderId.Name = "lblOrderId"
         Me.lblOrderId.Size = New System.Drawing.Size(49, 30)
         Me.lblOrderId.TabIndex = 28
@@ -105,7 +77,7 @@ Partial Class frmReceipt
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(200, 30)
+        Me.Label7.Location = New System.Drawing.Point(80, 59)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(125, 30)
         Me.Label7.TabIndex = 27
@@ -116,8 +88,8 @@ Partial Class frmReceipt
         Me.lblTime.AutoSize = True
         Me.lblTime.BackColor = System.Drawing.Color.Transparent
         Me.lblTime.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTime.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblTime.Location = New System.Drawing.Point(93, 552)
+        Me.lblTime.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblTime.Location = New System.Drawing.Point(580, 59)
         Me.lblTime.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTime.Name = "lblTime"
         Me.lblTime.Size = New System.Drawing.Size(70, 30)
@@ -129,8 +101,8 @@ Partial Class frmReceipt
         Me.lblServiceTax.AutoSize = True
         Me.lblServiceTax.BackColor = System.Drawing.Color.Transparent
         Me.lblServiceTax.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblServiceTax.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblServiceTax.Location = New System.Drawing.Point(425, 450)
+        Me.lblServiceTax.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblServiceTax.Location = New System.Drawing.Point(639, 449)
         Me.lblServiceTax.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblServiceTax.Name = "lblServiceTax"
         Me.lblServiceTax.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -143,8 +115,8 @@ Partial Class frmReceipt
         Me.lblTotal.AutoSize = True
         Me.lblTotal.BackColor = System.Drawing.Color.Transparent
         Me.lblTotal.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblTotal.Location = New System.Drawing.Point(425, 413)
+        Me.lblTotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblTotal.Location = New System.Drawing.Point(639, 494)
         Me.lblTotal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -157,7 +129,7 @@ Partial Class frmReceipt
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(185, 450)
+        Me.Label5.Location = New System.Drawing.Point(429, 449)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(221, 30)
@@ -169,7 +141,7 @@ Partial Class frmReceipt
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(13, 552)
+        Me.Label2.Location = New System.Drawing.Point(508, 59)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(84, 30)
@@ -181,7 +153,7 @@ Partial Class frmReceipt
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(185, 413)
+        Me.Label1.Location = New System.Drawing.Point(429, 494)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(221, 30)
@@ -191,6 +163,7 @@ Partial Class frmReceipt
         'ContextMenuStrip1
         '
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.ContextMenuStrip1.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cmnuPrint})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(121, 36)
@@ -213,15 +186,35 @@ Partial Class frmReceipt
         '
         Me.PrintDialog1.UseEXDialog = True
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(324, 19)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(153, 37)
+        Me.Label4.TabIndex = 31
+        Me.Label4.Text = "Cafe 123"
+        '
+        'Guna2Separator1
+        '
+        Me.Guna2Separator1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Separator1.FillColor = System.Drawing.Color.Black
+        Me.Guna2Separator1.FillStyle = System.Drawing.Drawing2D.DashStyle.Dash
+        Me.Guna2Separator1.FillThickness = 2
+        Me.Guna2Separator1.Location = New System.Drawing.Point(0, 421)
+        Me.Guna2Separator1.Name = "Guna2Separator1"
+        Me.Guna2Separator1.Size = New System.Drawing.Size(775, 10)
+        Me.Guna2Separator1.TabIndex = 32
+        '
         'frmReceipt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LemonChiffon
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(925, 594)
-        Me.Controls.Add(Me.lblAmount)
-        Me.Controls.Add(Me.Label3)
+        Me.ClientSize = New System.Drawing.Size(778, 564)
+        Me.Controls.Add(Me.Guna2Separator1)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.dgvFoodOrder)
         Me.Controls.Add(Me.lblOrderId)
         Me.Controls.Add(Me.Label7)
@@ -243,9 +236,6 @@ Partial Class frmReceipt
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents lblAmount As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents dgvFoodOrder As DataGridView
     Friend WithEvents lblOrderId As Label
     Friend WithEvents Label7 As Label
@@ -259,4 +249,7 @@ Partial Class frmReceipt
     Friend WithEvents PrintForm1 As PowerPacks.Printing.PrintForm
     Friend WithEvents PrintDialog1 As PrintDialog
     Friend WithEvents cmnuPrint As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Guna2Separator1 As Guna.UI2.WinForms.Guna2Separator
 End Class

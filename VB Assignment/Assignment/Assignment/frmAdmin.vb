@@ -22,8 +22,5 @@
         frmChart.Show()
     End Sub
 
-    Private Sub BtnMember_Click(sender As Object, e As EventArgs) Handles BtnMember.Click
-        frmEditCustomer.Show()
-        Me.Close()
-    End Sub
+
 End Class

@@ -3,7 +3,7 @@ Imports System.Data
 Public Class frmEditCustomer
     Dim edit
     Private Sub MnuBack_Click(sender As Object, e As EventArgs) Handles mnuBack.Click
-        frmMenu.Show()
+
         Me.Close()
     End Sub
 
@@ -53,11 +53,12 @@ Public Class frmEditCustomer
         'strConnectionString = "Data Source=LAPTOP-287EO590\HI;Initial Catalog=PikachuCafe;Integrated Security=True"
         strConnectionString = "Data Source=BRANDON\SQLEXPRESS;Initial Catalog=OrderSystem;Integrated Security=True"
 
-        'If txtMemberID.Text = String.Empty Then
-        strSql = "Insert into Member([member_name],[member_phone]) values('" & txtCustomerName.Text & "','" & txtCustomerPhone.Text & "')"
-        'Else
-        'strSql = "Insert into Customer([CustomerID],[CustomerName],[CustomerPhone],[MemberID]) values('" & txtCustomerID.Text & "','" & txtCustomerName.Text & "','" & txtCustomerPhone.Text & "', '" & txtMemberID.Text & "')"
-        'End If
+        If txtCustomerName.Text.Length > 0 And txtCustomerName.Text.Length < 30 AndAlso
+            txtCustomerPhone.Text.Length > 0 And txtCustomerPhone.Text.Length < 12 Then
+            strSql = "Insert into Member([member_name],[member_phone]) values('" & txtCustomerName.Text & "','" & txtCustomerPhone.Text & "')"
+        Else
+            MessageBox.Show("Please be sure you fill in all data and ensure your text length is not too long")
+        End If
 
         sqlCnn = New SqlConnection(strConnectionString)
         Try
@@ -110,7 +111,12 @@ Public Class frmEditCustomer
         'strConnectionString = "Data Source=LAPTOP-287EO590\HI;Initial Catalog=PikachuCafe;Integrated Security=True"
         strConnectionString = "Data Source=BRANDON\SQLEXPRESS;Initial Catalog=OrderSystem;Integrated Security=True"
 
-        strSql = "Update Member Set member_name = '" & txtCustomerName.Text & "', member_phone = '" & txtCustomerPhone.Text & "' Where member_id = '" & txtCustomerID.Text & "' "
+        If txtCustomerName.Text.Length > 0 And txtCustomerName.Text.Length < 30 AndAlso
+            txtCustomerPhone.Text.Length > 0 And txtCustomerPhone.Text.Length < 12 Then
+            strSql = "Update Member Set member_name = '" & txtCustomerName.Text & "', member_phone = '" & txtCustomerPhone.Text & "' Where member_id = '" & txtCustomerID.Text & "' "
+        Else
+            MessageBox.Show("Please be sure you fill in all data and ensure your text length is not too long")
+        End If
 
         sqlCnn = New SqlConnection(strConnectionString)
 
@@ -151,7 +157,12 @@ Public Class frmEditCustomer
         sqlCnn.Close()
     End Sub
 
-    Private Sub BtnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+
+    Private Sub FrmEditCustomer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadCustomer()
+    End Sub
+
+    Private Sub btnEdit_Click_1(sender As Object, e As EventArgs) Handles btnEdit.Click
         If edit = 1 Then
             LoadCustomer()
             AddCustomer()
@@ -175,9 +186,5 @@ Public Class frmEditCustomer
             txtCustomerPhone.Clear()
             LoadCustomer()
         End If
-    End Sub
-
-    Private Sub FrmEditCustomer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoadCustomer()
     End Sub
 End Class

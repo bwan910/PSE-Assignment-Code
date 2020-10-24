@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmAdmin
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,20 +20,17 @@ Partial Class frmAdmin
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAdmin))
         Me.btnMenu = New System.Windows.Forms.Button()
         Me.btnEmployee = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.mnuLogOut = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.btnChart = New System.Windows.Forms.Button()
-        Me.BtnMember = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnMenu
@@ -44,9 +41,9 @@ Partial Class frmAdmin
         Me.btnMenu.Font = New System.Drawing.Font("Segoe Print", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnMenu.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnMenu.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnMenu.Location = New System.Drawing.Point(56, 226)
+        Me.btnMenu.Location = New System.Drawing.Point(47, 349)
         Me.btnMenu.Name = "btnMenu"
-        Me.btnMenu.Size = New System.Drawing.Size(175, 261)
+        Me.btnMenu.Size = New System.Drawing.Size(175, 138)
         Me.btnMenu.TabIndex = 0
         Me.btnMenu.Text = "Menu"
         Me.btnMenu.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -59,9 +56,9 @@ Partial Class frmAdmin
         Me.btnEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnEmployee.Font = New System.Drawing.Font("Segoe Print", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEmployee.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnEmployee.Location = New System.Drawing.Point(322, 226)
+        Me.btnEmployee.Location = New System.Drawing.Point(313, 349)
         Me.btnEmployee.Name = "btnEmployee"
-        Me.btnEmployee.Size = New System.Drawing.Size(167, 261)
+        Me.btnEmployee.Size = New System.Drawing.Size(167, 138)
         Me.btnEmployee.TabIndex = 1
         Me.btnEmployee.Text = "Employee"
         Me.btnEmployee.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -71,12 +68,11 @@ Partial Class frmAdmin
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.Black
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.GripMargin = New System.Windows.Forms.Padding(2, 2, 0, 2)
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuLogOut})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(795, 39)
+        Me.MenuStrip1.Size = New System.Drawing.Size(778, 39)
         Me.MenuStrip1.TabIndex = 3
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -89,60 +85,33 @@ Partial Class frmAdmin
         Me.mnuLogOut.Size = New System.Drawing.Size(115, 35)
         Me.mnuLogOut.Text = "Log Out"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(292, 70)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(299, 106)
-        Me.PictureBox1.TabIndex = 4
-        Me.PictureBox1.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox2.Location = New System.Drawing.Point(147, 70)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(150, 106)
-        Me.PictureBox2.TabIndex = 5
-        Me.PictureBox2.TabStop = False
-        '
         'btnChart
         '
-        Me.btnChart.Location = New System.Drawing.Point(642, 96)
+        Me.btnChart.Location = New System.Drawing.Point(568, 349)
         Me.btnChart.Name = "btnChart"
-        Me.btnChart.Size = New System.Drawing.Size(101, 60)
+        Me.btnChart.Size = New System.Drawing.Size(167, 138)
         Me.btnChart.TabIndex = 6
         Me.btnChart.Text = "Chart"
         Me.btnChart.UseVisualStyleBackColor = True
         '
-        'BtnMember
+        'PictureBox1
         '
-        Me.BtnMember.BackgroundImage = CType(resources.GetObject("BtnMember.BackgroundImage"), System.Drawing.Image)
-        Me.BtnMember.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnMember.Font = New System.Drawing.Font("Segoe Print", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnMember.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnMember.Location = New System.Drawing.Point(560, 226)
-        Me.BtnMember.Name = "BtnMember"
-        Me.BtnMember.Size = New System.Drawing.Size(167, 261)
-        Me.BtnMember.TabIndex = 7
-        Me.BtnMember.Text = "Member"
-        Me.BtnMember.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnMember.UseVisualStyleBackColor = False
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 33)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(778, 232)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 7
+        Me.PictureBox1.TabStop = False
         '
         'frmAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Turquoise
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(795, 499)
-        Me.Controls.Add(Me.BtnMember)
-        Me.Controls.Add(Me.btnChart)
-        Me.Controls.Add(Me.PictureBox2)
+        Me.BackColor = System.Drawing.Color.LemonChiffon
+        Me.ClientSize = New System.Drawing.Size(778, 564)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.btnChart)
         Me.Controls.Add(Me.btnEmployee)
         Me.Controls.Add(Me.btnMenu)
         Me.Controls.Add(Me.MenuStrip1)
@@ -156,7 +125,6 @@ Partial Class frmAdmin
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -166,8 +134,6 @@ Partial Class frmAdmin
     Friend WithEvents btnEmployee As Button
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents mnuLogOut As ToolStripMenuItem
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents btnChart As Button
-    Friend WithEvents BtnMember As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

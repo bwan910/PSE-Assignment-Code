@@ -67,4 +67,8 @@ Public Class frmChart
         Chart1.Size = New System.Drawing.Size(780, 350)
 
     End Sub
+
+    Private Sub cboxOption_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboxOption.SelectedIndexChanged
+
+    End Sub
 End Class

@@ -112,4 +112,11 @@ WHERE order_num = '" & ordernum & "'", sqlCnn)
 
     End Sub
 
+    Private Sub cmnuNewOrder_Click(sender As Object, e As EventArgs) Handles cmnuNewOrder.Click
+        frmMenu.Show()
+        Me.Close()
+
+    End Sub
+
+
 End Class

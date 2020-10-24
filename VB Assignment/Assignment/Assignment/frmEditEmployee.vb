@@ -64,7 +64,13 @@ Public Class frmEditEmployee
         'strConnectionString = "Data Source=LAPTOP-287EO590\HI;Initial Catalog=PikachuCafe;Integrated Security=True"
         strConnectionString = "Data Source=BRANDON\SQLEXPRESS;Initial Catalog=OrderSystem;Integrated Security=True"
 
-        strSql = "Insert into Employee([emp_name],[emp_phone],[emp_password]) values('" & txtEmpName.Text & "', '" & txtEmpPhone.Text & "', '" & txtEmpPassword.Text & "')"
+        If txtEmpName.Text.Length > 0 And txtEmpName.Text.Length < 30 AndAlso
+            txtEmpPassword.Text.Length > 0 And txtEmpPassword.Text.Length < 20 AndAlso
+            txtEmpPhone.Text.Length > 0 And txtEmpPhone.Text.Length < 12 Then
+            strSql = "Insert into Employee([emp_name],[emp_phone],[emp_password]) values('" & txtEmpName.Text & "', '" & txtEmpPhone.Text & "', '" & txtEmpPassword.Text & "')"
+        Else
+            MessageBox.Show("Please be sure you fill in all data and ensure your text length is not too long")
+        End If
 
         sqlCnn = New SqlConnection(strConnectionString)
         Try
@@ -119,7 +125,13 @@ Public Class frmEditEmployee
         'strConnectionString = "Data Source=LAPTOP-287EO590\HI;Initial Catalog=PikachuCafe;Integrated Security=True"
         strConnectionString = "Data Source=BRANDON\SQLEXPRESS;Initial Catalog=OrderSystem;Integrated Security=True"
 
-        strSql = "Update Employee Set emp_name = '" & txtEmpName.Text & "', emp_phone = '" & txtEmpPhone.Text & "', emp_password = '" & txtEmpPassword.Text & "' WHERE emp_id = '" & txtEmpID.Text & "'"
+        If txtEmpName.Text.Length > 0 And txtEmpName.Text.Length < 30 AndAlso
+            txtEmpPassword.Text.Length > 0 And txtEmpPassword.Text.Length < 20 AndAlso
+            txtEmpPhone.Text.Length > 0 And txtEmpPhone.Text.Length < 12 Then
+            strSql = "Update Employee Set emp_name = '" & txtEmpName.Text & "', emp_phone = '" & txtEmpPhone.Text & "', emp_password = '" & txtEmpPassword.Text & "' WHERE emp_id = '" & txtEmpID.Text & "'"
+        Else
+            MessageBox.Show("Please be sure you fill in all data and ensure your text length is not too long")
+        End If
 
         sqlCnn = New SqlConnection(strConnectionString)
 
@@ -162,8 +174,16 @@ Public Class frmEditEmployee
         sqlCnn.Close()
     End Sub
 
+
+
+
+    Private Sub frmEditEmployee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadEmployee()
+    End Sub
+
     ' For Edit Button. This button shares the Add, Delete Update function
-    Private Sub BtnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+
+    Private Sub btnEdit_Click_1(sender As Object, e As EventArgs) Handles btnEdit.Click
         If edit = 1 Then
             LoadEmployee()
             AddEmployee()
@@ -192,13 +212,5 @@ Public Class frmEditEmployee
             LoadEmployee()
 
         End If
-    End Sub
-
-    Private Sub DgvEmployee_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEmployee.CellContentClick
-        LoadEmployee()
-    End Sub
-
-    Private Sub frmEditEmployee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 End Class

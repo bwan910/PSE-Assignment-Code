@@ -60,35 +60,8 @@ Public Class frmViewTotal
         End Try
     End Sub
 
-    Private Sub BtnPay_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
-        Loadmember()
+    Private Sub BtnPay_Click(sender As Object, e As EventArgs)
 
-        'Dim strConnectionString As String
-        'Dim sqlCnn As SqlConnection
-        'Dim sqlCmd As SqlCommand
-        'Dim adapter As New SqlDataAdapter
-        'Dim ds As New DataSet
-        'Dim strSql As String
-
-        'strConnectionString = "Data Source=BRANDON\SQLEXPRESS;Initial Catalog=OrderSystem;Integrated Security=True"
-
-
-        'sqlCnn = New SqlConnection(strConnectionString)
-        'strSql = "UPDATE Ordering SET member_id = '" & memberid & "' WHERE order_num = '" & ordernum & "';"
-        'sqlCnn.Open()
-        'sqlCmd = New SqlCommand(strSql, sqlCnn)
-        'sqlCmd.ExecuteNonQuery()
-        'sqlCmd.Dispose()
-        'sqlCnn.Close()
-
-        If memberid = 0 Then
-            frmReceipt.Show()
-            Me.Close()
-        Else
-            UpdateMemberID()
-            frmMemberReceipt.Show()
-            Me.Close()
-        End If
 
     End Sub
 
@@ -186,9 +159,36 @@ WHERE order_num = '" & ordernum & "' ", sqlCnn)
 
     End Sub
 
+    Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
+        Loadmember()
+
+        'Dim strConnectionString As String
+        'Dim sqlCnn As SqlConnection
+        'Dim sqlCmd As SqlCommand
+        'Dim adapter As New SqlDataAdapter
+        'Dim ds As New DataSet
+        'Dim strSql As String
+
+        'strConnectionString = "Data Source=BRANDON\SQLEXPRESS;Initial Catalog=OrderSystem;Integrated Security=True"
 
 
+        'sqlCnn = New SqlConnection(strConnectionString)
+        'strSql = "UPDATE Ordering SET member_id = '" & memberid & "' WHERE order_num = '" & ordernum & "';"
+        'sqlCnn.Open()
+        'sqlCmd = New SqlCommand(strSql, sqlCnn)
+        'sqlCmd.ExecuteNonQuery()
+        'sqlCmd.Dispose()
+        'sqlCnn.Close()
 
+        If memberid = 0 Then
+            frmReceipt.Show()
+            Me.Close()
+        Else
+            UpdateMemberID()
+            frmMemberReceipt.Show()
+            Me.Close()
+        End If
+    End Sub
 
 
 End Class
